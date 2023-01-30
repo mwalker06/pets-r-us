@@ -1,0 +1,273 @@
+/**
+     Title: site.css
+     Author: Megan Walker
+     Date: 01/01/2023
+     Description: styling for Pets-R-Us
+*/
+
+body.light-theme {
+  --text-color: #000;
+  --background-color: #c2b9b0;
+  --nav-background-color: #e7717d;
+  --button-background-color: #e7717d;
+  --heading-color: #7e685a;
+  --card-background-color: white;
+  --table-border-color: #7e685a;
+  --table-header-text-color: #000;
+}
+
+body {
+  font-family: "libre baskerville", serif;
+  margin: 0;
+  background-color: var(--background-color);
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: var(--nav-background-color);
+  height: 64px;
+  justify-content: space-between;
+  box-shadow: 0 0 5px grey;
+  align-items: center;
+  top: 0;
+  width: 100%;
+  position: fixed;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.subnav {
+  float: right;
+  overflow: hidden;
+}
+.subnav .subnavbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 20px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover,
+.subnav:hover .subnavbtn {
+  background-color: #afd275;
+}
+
+.subnav-content {
+  display: none;
+  position: fixed;
+  left: 0;
+  background-color: #afd275;
+  width: 100%;
+}
+
+.subnav-content a {
+  display: block;
+  float: right;
+  color: white;
+  text-decoration: none;
+  align-content: center;
+  padding: 10px;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+.logo-top {
+  padding: 120px 16px 16px;
+  color: black;
+  text-decoration: none;
+  font-size: 30px;
+  line-height: 30px;
+}
+.logo-top h1 {
+  color: var(--heading-color);
+}
+.logo {
+  padding: 40px 16px;
+  color: black;
+  text-decoration: none;
+  font-size: 30px;
+  line-height: 30px;
+}
+.logo-top img {
+  border-style: none;
+}
+.contact-btn {
+  border-radius: 8px;
+  background-color: var(--button-background-color);
+  padding: 14px 40px;
+  font-size: 20px;
+  border: none;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+}
+.footer {
+  background-color: var(--nav-background-color);
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+.card {
+  background-color: var(--card-background-color);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#dog-of-week {
+  display: inline-flex;
+}
+#testimonials {
+  display: inline-flex;
+  text-align: center;
+}
+.card h2 {
+  color: var(--text-color);
+  text-align: center;
+  text-decoration-line: overline;
+  text-shadow: #7e685a 0px 0px 1px;
+}
+.card img {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.card p {
+  color: var(--text-color);
+  text-align: center;
+}
+.footer p {
+  color: white;
+}
+.footer a {
+  color: white;
+}
+.footer a:hover {
+  color: #eee;
+}
+@media screen and (max-width: 600px) {
+  .navbar a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .subnav {
+    float: none;
+  }
+  .subnav .subnavbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+  .subnav-content {
+    position: relative;
+  }
+  .subnav-content a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+.contact {
+  background-color: var(--nav-background-color);
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+.contact h2 {
+  color: white;
+}
+.contact p {
+  color: white;
+}
+.contact a {
+  color: white;
+}
+.contact a:hover {
+  color: #eee;
+}
+.social {
+  background-color: var(--nav-background-color);
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+.social h2 {
+  color: white;
+}
+.social p {
+  color: white;
+}
+.social a {
+  color: white;
+}
+.social a:hover {
+  color: #eee;
+}
+.business-hours {
+  background-color: var(--nav-background-color);
+  text-align: right;
+  color: white;
+  display: inline-block;
+  width: 40%;
+}
+.footer-section.links {
+  text-align: left;
+  color: white;
+  display: inline-block;
+  width: 50%;
+}
+.business-hours li {
+  list-style-type: none;
+}
+.footer-section.links li {
+  list-style-type: none;
+}
+.footer-section.links ul {
+  padding: 0;
+}
+table {
+  width: 100%;
+  border: var(--table-border-color) 3px solid;
+}
+table th {
+  background-color: var(--table-header-background-color);
+  color: var(--table-header-text-color);
+  text-align: left;
+}
+table td th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+#site-logo {
+  text-shadow: #c2b9b0 0px 0px 1px;
+  font-weight: bolder;
+  font-size: 2em;
+  font-family: 'Libre baskerville', serif;
+  font-style: italic;
+}
+.contact-btn a {
+  padding: 10px 20px;
+  font-size: 20px;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+}
