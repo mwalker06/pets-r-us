@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <!-- Title: index.ejs
      Author: Megan Walker
      Date: 01/28/2023
@@ -18,14 +18,14 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <link rel="stylesheet" href="styles/site.css" type="text/css">
 </head>
 
 <body class="light-theme">
     <div class="navbar">
-        <a id= "site-logo" href="/">Pets-R-Us <i class="fa-solid fa-paw"></i></a>
+        <a id="site-logo" href="/">Pets-R-Us <i class="fa-solid fa-paw"></i></a>
         <div class="subnav">
             <button class="subnavbtn">Pet Services <i class="fa fa-caret-down"></i></button>
             <div class="subnav-content">
@@ -56,120 +56,126 @@
             </div>
         </div>
     </div>
-    <center>
-        <div class="logo-top">
-            <h1>Pets-R-Us</h1>
-            <button class="contact-btn"> <a href="#contact">Contact Us</a></button><br><br>
-            <img src="/images/field-dog.jpg" alt="dog in a field" width="auto" height="600" />
-        </div>
-    </center>
+    <div class="logo-top">
+        <h1>Pets-R-Us</h1>
+        <a class="contact-btn" href="#contact">Contact Us</a><br><br>
+        <img src="/images/field-dog.jpg" alt="dog in a field" height="600">
+    </div>
     <!-- dog of the week section with card and image-->
-        <div class="card">
-            <div class="card-title">
-                <h2>Dog of the Week</h2>
-                <div class="card-content" id="dog-of-week">
-                    <img src="/images/dog.jpg" alt="Yellow Lab" width="300" height="200" />
-                    <p>Meet our dog of the week, a 2 year old yellow lab named Max. Max is a very sweet dog who loves to
-                        play
-                        fetch and go for walks. He is very friendly and loves to meet new people. Max is looking for a
-                        loving
-                        home with a family who will give him lots of attention and love. If you are interested in adopting
-                        Max,
-                        please contact us today!</p>
+    <div class="card">
+        <div class="card-title">
+            <h2>Dog of the Week</h2>
+            <div class="card-content" id="dog-of-week">
+                <img src="/images/dog.jpg" alt="Yellow Lab" width="300" height="200">
+                <p>Meet our dog of the week, a 2 year old yellow lab named Max. Max is a very sweet dog who loves to
+                    play
+                    fetch and go for walks. He is very friendly and loves to meet new people. Max is looking for a
+                    loving
+                    home with a family who will give him lots of attention and love. If you are interested in adopting
+                    Max,
+                    please contact us today!</p>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonials section-->
+    <div class="card">
+        <div class="card-tite">
+            <h2>Testimonials</h2>
+            <div class="card-content" id="testimonials">
+                <div>
+                    <h3>John Smith</h3>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                        class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <p>“I have been taking my dog to Pets-R-Us for grooming for the past 5 years. I have always been
+                        very
+                        satisfied with the service and the price. I would highly recommend Pets-R-Us to anyone looking
+                        for a
+                        great groomer.”</p>
+                </div>
+                <div>
+                    <h3>Mary Anderson</h3>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                        class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <p>“I have been taking my dog to Pets-R-Us for grooming for the past 5 years. I have always been
+                        very
+                        satisfied with the service and the price. I would highly recommend Pets-R-Us to anyone looking
+                        for a
+                        great groomer.”</p>
+                </div>
+                <div>
+                    <h3>Jane Doe</h3>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                        class="fas fa-star"></i>
+                    <p>“I have been taking my dog to Pets-R-Us for grooming for the past 5 years. I have always been
+                        very
+                        satisfied with the service and the price. I would highly recommend Pets-R-Us to anyone looking
+                        for a
+                        great groomer.”</p>
                 </div>
             </div>
         </div>
-           <!-- Testimonials section-->
-        <div class="card">
-            <div class="card-tite">
-                <h2>Testimonials</h2>
-                <div class="card-content" id="testimonials">
-                    <div>
-                        <h3>John Smith</h3>
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    <p>“I have been taking my dog to Pets-R-Us for grooming for the past 5 years. I have always been very
-                        satisfied with the service and the price. I would highly recommend Pets-R-Us to anyone looking for a
-                        great groomer.”</p>
-                    </div>
-                    <div>
-                        <h3>Mary Anderson</h3>
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    <p>“I have been taking my dog to Pets-R-Us for grooming for the past 5 years. I have always been very
-                        satisfied with the service and the price. I would highly recommend Pets-R-Us to anyone looking for a
-                        great groomer.”</p>
-                    </div>
-                    <div>
-                        <h3>Jane Doe</h3>
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    <p>“I have been taking my dog to Pets-R-Us for grooming for the past 5 years. I have always been very
-                        satisfied with the service and the price. I would highly recommend Pets-R-Us to anyone looking for a
-                        great groomer.”</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="contact" class="card">
-            <h2>Contact Us</h2>
-            <div class="form">
-              <form method="get">
+    </div>
+    <div id="contact" class="card">
+        <h2>Contact Us</h2>
+        <div class="form">
+            <form method="get">
                 <fieldset>
-                  <legend>Information</legend>
-                  <label>First Name: <input type="text" name="fname" id="fname"></label><br><br>
-                  <label>Last Name: <input type="text" name="lname" id="lname"></label><br><br>
-                  <label>E-mail: <input type="text" name="email" id="email"></label><br><br>
+                    <legend>Information</legend>
+                    <label>First Name: <input type="text" name="fname" id="fname"></label><br><br>
+                    <label>Last Name: <input type="text" name="lname" id="lname"></label><br><br>
+                    <label>E-mail: <input type="text" name="email" id="email"></label><br><br>
                 </fieldset>
                 <label for="comments">Comments:</label><br>
                 <textarea name="comments" id="comments" rows="4" cols="40"></textarea><br><br>
                 <input type="submit" value="Contact"> <input type="reset">
-              </form>
-            </div>
-          </div>
+            </form>
+        </div>
     </div>
     <br><br>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <p>
+                    Pets-R-Us is a pet store and grooming service located in the heart of downtown. We offer a wide
+                    variety
+                    of
+                    pet supplies and services. We also have a pet adoption center where you can find your new best
+                    friend.
+                </p>
+                <div class="contact">
+                    <span><i class="fas fa-phone"></i> &nbsp; 555-555-5555</span>
+                    <span><br><i class="fas fa-envelope"></i> &nbsp;18 Spring Ave.
+                        Mahwah, NJ 07430</span>
+                </div>
+                <div class="socials">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Adopt</a></li>
+                    <li><a href="#">Get Directions</a></li>
+                </ul>
+            </div>
+            <div class="business-hours">
+                <h2>Business Hours</h2>
+                <ul>
+                    <li><span>Mon-Fri:</span> 9am - 5pm</li>
+                    <li><span>Saturday:</span> 10am - 4pm</li>
+                    <li><span>Sunday:</span> Closed</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; Pets-R-Us | Designed by Megan Walker
+        </div>
+    </footer>
 </body>
-<!-- Footer -->
-<footer class="footer">
-    <div class="footer-content">
-        <div class="footer-section about">
-            <p>
-                Pets-R-Us is a pet store and grooming service located in the heart of downtown. We offer a wide variety of
-                pet supplies and services. We also have a pet adoption center where you can find your new best friend.
-            </p>
-            <div class="contact">
-                <span><i class="fas fa-phone"></i> &nbsp; 555-555-5555</span>
-                <span><br><i class="fas fa-envelope"></i> &nbsp;18 Spring Ave.
-                    Mahwah, NJ 07430</span>
-            </div>
-            <div class="socials">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
-        </div>
-        <div class="footer-section links">
-            <h2>Quick Links</h2>
-            <ul>
-                <a href="#">
-                    <li>Events</li>
-                </a>
-                <a href="#">
-                    <li>Adopt</li>
-                </a>
-                <a href="#">
-                    <li>Get Directions</li>
-                </a>
-            </ul>
-        </div>
-        <div class="business-hours">
-            <h2>Business Hours</h2>
-            <ul>
-                <li><span>Mon-Fri:</span> 9am - 5pm</li>
-                <li><span>Saturday:</span> 10am - 4pm</li>
-                <li><span>Sunday:</span> Closed</li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        &copy; Pets-R-Us | Designed by Megan Walker
+
 </html>
