@@ -14,6 +14,7 @@ body.light-theme {
   --card-background-color: white;
   --table-border-color: #7e685a;
   --table-header-text-color: #000;
+  --header-background-color: #afd275;
 }
 
 body {
@@ -32,6 +33,7 @@ body {
   top: 0;
   width: 100%;
   position: fixed;
+  padding: .5%;
 }
 
 .navbar a {
@@ -89,12 +91,13 @@ body {
   display: block;
 }
 .logo-top {
-  padding: 120px 16px 16px;
+  padding: 120px 16px 70px;
   color: black;
   text-decoration: none;
   font-size: 30px;
   line-height: 30px;
   text-align: center;
+  background-color: var(--header-background-color);
 }
 .logo-top h1 {
   color: var(--heading-color);
@@ -122,7 +125,7 @@ body {
 }
 .footer {
   background-color: var(--nav-background-color);
-  padding: 20px;
+  padding: 1% 10% 1% 10%;
   text-align: center;
   color: white;
 }
@@ -130,13 +133,17 @@ body {
   background-color: var(--card-background-color);
   border-radius: 8px;
   padding: 20px;
-  margin: 20px;
+  margin: -3% 10% 1% 10%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 #dog-of-week {
   display: inline-flex;
 }
 #testimonials {
+  display: inline-flex;
+  text-align: center;
+}
+#trainers {
   display: inline-flex;
   text-align: center;
 }

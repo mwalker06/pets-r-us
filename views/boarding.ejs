@@ -1,0 +1,47 @@
+<!-- Title: boarding.ejs
+     Author: Megan Walker
+     Date: 02/03/2023
+     Description: boarding.ejs for pets-r-us assign
+     References: https://www.w3schools.com/
+-->
+<%- include('./_header.ejs') %>
+
+    <div class="logo-top">
+        <h1>Boarding</h1>
+        <img src="/images/boarding.jpg" alt="cat getting groomed" height="400">
+    </div>
+    <!-- Pet Boarding prices section-->
+    <div class="card">
+        <div class="card-title">
+            <h2>Pet Boarding Prices</h2>
+        </div>
+        <table>
+            <tr>
+                <th></th>
+                <th>1 Dog</th>
+                <th>2 Dogs</th>
+                <th>3 Dogs</th>
+            </tr>
+            <tr>
+                <td>1 Night</td>
+                <td>$50</td>
+                <td>$90</td>
+                <td>$120</td>
+            </tr>
+            <tr>
+                <td>5 Nights</td>
+                <td>$225</td>
+                <td>$400</td>
+                <td>$550</td>
+            </tr>
+            <tr>
+                <td>Over 5 Nights</td>
+                <td>$40/night</td>
+                <td>$70/night</td>
+                <td>$100/night</td>
+            </tr>
+        </table>
+    </div>
+
+    <br><br>
+    <%- include('./_footer.ejs') %>
