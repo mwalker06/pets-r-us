@@ -23,21 +23,29 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 // Tells Express to use the public folder for static assets.
-app.use('/styles', express.static(path.join(__dirname, 'public/styles')));
-app.use('/images', express.static(path.join(__dirname, 'public/images')));
+app.use("/styles", express.static(path.join(__dirname, "public/styles")));
+app.use("/images", express.static(path.join(__dirname, "public/images")));
 
 // Routes
-app.get("/", (req, res) => {
-  res.render("index");
+app.get('/', (req, res) => {
+  res.render('index', {
+    title: 'Home'
+  })
 });
-app.get("/grooming", (req, res) => {
-  res.render("grooming.ejs");
+app.get('/grooming', (req, res) => {
+  res.render('grooming.ejs',{
+    title: 'Grooming'
+  })
 });
-app.get("/boarding", (req, res) => {
-  res.render("boarding.ejs");
+app.get('/boarding', (req, res) => {
+  res.render('boarding.ejs',{
+    title: 'Boarding'
+  })
 });
-app.get("/training", (req, res) => {
-  res.render("training.ejs");
+app.get('/training', (req, res) => {
+  res.render('training.ejs',{
+    title: 'Training'
+  })
 });
 // Tells Express to listen on port 3000
 const PORT = process.env.PORT || 3000;

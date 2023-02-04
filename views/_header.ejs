@@ -9,7 +9,7 @@
 <html lang="en">
 
 <head>
-    <title>Pets-R-Us</title>
+    <title>Pets-R-Us: <%= title %></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -57,3 +57,9 @@
             </div>
         </div>
     </div>
+
+    <% if (title !== 'Home') { %>
+    <div class="logo-top">
+        <h1><%= title %></h1>
+    </div>
+    <% } %>
