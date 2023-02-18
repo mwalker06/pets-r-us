@@ -1,0 +1,39 @@
+<!-- Title: boarding.ejs
+     Author: Megan Walker
+     Date: 02/03/2023
+     Description: boarding.ejs for pets-r-us assign
+     References: https://www.w3schools.com/
+-->
+<%- include('./partials/_header.ejs') %>
+    <!-- Customer List section-->
+    <div class="card">
+        <div class="card-content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% customers.forEach(function(customer) { %>
+                        <tr>
+                            <td>
+                                <%= customer.firstName %>
+                            </td>
+                            <td>
+                                <%= customer.lastName %>
+                            </td>
+                            <td>
+                                <%= customer.email %>
+                            </td>
+                        </tr>
+                        <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <br><br>
+    <%- include('./partials/_footer.ejs') %>

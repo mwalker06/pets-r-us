@@ -4,12 +4,14 @@
      Description: index.ejs for pets-r-us assign
      References: https://www.w3schools.com/
 -->
-<%- include('./_header.ejs') %>
+<%- include('./partials/_header.ejs') %>
     <!-- logo and contact button -->
-    <div class="logo-top">
-        <h1>Pets-R-Us</h1>
-        <a class="contact-btn" href="#contact">Contact Us</a><br><br>
-        <img src="/images/field-dog.jpg" alt="dog in a field" height="600">
+    <div class="logo-top logo-image">
+        <div class="background-image"></div>
+        <div class="logo-content">
+            <h1>Pets-R-Us</h1>
+            <a class="contact-btn" href="#contact">Contact Us</a><br><br>
+        </div>
     </div>
     <!-- dog of the week section with card and image-->
     <div class="card">
@@ -81,4 +83,4 @@
     </div>
     <br><br>
 
-    <%- include('./_footer.ejs') %>
+    <%- include('./partials/_footer.ejs') %>

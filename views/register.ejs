@@ -4,7 +4,7 @@
      Description: register.ejs for pets-r-us assign
      References: https://www.w3schools.com/
 -->
-<%- include('./_header.ejs') %>
+<%- include('./partials/_header.ejs') %>
 
     <!-- customer registration section-->
     <div class="card">
@@ -50,14 +50,6 @@
                     <label for="email">Email:</label>
                     <input type="text" id="email" name="email">
                 </div>
-                <div>
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password">
-                </div>
-                <div>
-                    <label for="confirmPassword">Confirm Password:</label>
-                    <input type="password" id="confirmPassword" name="confirmPassword">
-                </div>
                 <p> By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
                 <div>
                     <button type="submit" class="registerbtn">Register</button>
@@ -69,4 +61,4 @@
         </div>
     </div>
 
-    <%- include('./_footer.ejs') %>
+    <%- include('./partials/_footer.ejs') %>

@@ -59,7 +59,7 @@ app.get("/register", (req, res) => {
     title: "Register",
   });
 });
-
+// route handler for displaying the list of customers
 app.post("/register", function (req, res) {
   console.log(req.body);
   const firstName = req.body.firstName;
@@ -71,11 +71,6 @@ app.post("/register", function (req, res) {
   const zip = req.body.zip;
   const phone = req.body.phone;
   const email = req.body.email;
-  const password = req.body.password;
-  const confirmPassword = req.body.confirmPassword;
-
-  console.log("Customer ID: " + customerId);
-  console.log("Email: " + email);
 
   const customer = new Customer({
     firstName: firstName,
@@ -87,19 +82,31 @@ app.post("/register", function (req, res) {
     zip: zip,
     phone: phone,
     email: email,
-    password: password,
-    confirmPassword: confirmPassword,
   });
-
-  console.log("customer was created yo");
-
+  // save the customer
   customer.save(function (error) {
     if (error) {
       console.log(error);
       // handle error
+      res.status(500).send("Error registering new customer. Please try again.");
     } else {
-      console.log("no errors bruh");
+      // success
+      console.log("Customer registered successfully!");
       res.redirect("/");
+    }
+  });
+});
+
+// route handler for displaying the list of customers
+app.get("/customers", (req, res) => {
+  // use the Customer model's find() method to retrieve all customers
+  Customer.find({}, (err, customer) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send("Error retrieving customers");
+    } else {
+      // render the customer-list view and pass the customers data to it
+      res.render("customer-list", { customers: customer, title: "Customer List" });
     }
   });
 });
@@ -121,7 +128,6 @@ mongoose
   .catch((err) => {
     console.log("MongoDB Error: " + err.message);
   });
-
 
 app.listen(PORT, () => {
   console.info(`pets-r-us application started and listening on port ${PORT}`);
