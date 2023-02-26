@@ -331,7 +331,9 @@ table td th {
 
 /* Full-width input fields */
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="email"],
+select {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -340,10 +342,27 @@ input[type="password"] {
   background: #f1f1f1;
 }
 
+input[type="submit"] {
+  background-color: #04aa6d;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
 input[type="text"]:focus,
-input[type="password"]:focus {
+input[type="password"]:focus,
+input[type="email"]:focus,
+select:focus {
   background-color: #ddd;
   outline: none;
+}
+
+input[type="submit"]:hover {
+  opacity: 1;
 }
 
 /* Overwrite default styles of hr */
