@@ -1,0 +1,38 @@
+<!-- Title: booking.ejs
+     Author: Megan Walker
+     Date: 02/26/2023
+     Description: booking.ejs for pets-r-us assign
+     References: https://www.w3schools.com/
+-->
+<%- include('./partials/_header.ejs') %>
+
+    <!-- appointment booking section-->
+    <div class="card">
+        <div class="card-title">
+            <h2>Appointment Booking</h2>
+            <p>Please fill in this form to book an appointment.</p>
+        </div>
+        <div class="booking-card">
+            <form action="/booking" method="POST">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+                <br>
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+                <label for="service">Service:</label>
+                <select id="service" name="service" required>
+                    <% services.forEach((service) => { %>
+                    <option value="<%= service.value %>"><%= service.text %></option>
+                    <% }); %>
+                </select>
+                <br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+    <br><br>
+    <%- include('./partials/_footer.ejs') %>

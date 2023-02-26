@@ -12,6 +12,11 @@ const express = require("express");
 const nodemon = require("nodemon");
 const path = require("path");
 const mongoose = require("mongoose");
+const fs = require("fs");
+
+
+// Import the Appointment model
+const Appointment = require("./models/appointment");
 
 // Import the Customer model
 const Customer = require("./models/customer");
@@ -29,6 +34,7 @@ app.set("view engine", "ejs");
 // Tells Express to use the public folder for static assets.
 app.use("/styles", express.static(path.join(__dirname, "public/styles")));
 app.use("/images", express.static(path.join(__dirname, "public/images")));
+app.use("/data", express.static(path.join(__dirname, "public/data")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -54,9 +60,38 @@ app.get("/training", (req, res) => {
   });
 });
 app.get("/register", (req, res) => {
-  console.log("register get page");
   res.render("register.ejs", {
     title: "Register",
+  });
+});
+app.get("/booking", (req, res) => {
+  let jsonFile = fs.readFileSync("./public/data/services.json");
+  let services = JSON.parse(jsonFile);
+
+  console.log(services);
+
+  res.render("booking.ejs", {
+    title: "Booking",
+    services: services,
+  });
+});
+
+app.post("/booking", (req, res, next) => {
+  const appointment = new Appointment({
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    service: req.body.service,
+  });
+
+  Appointment.create(appointment, function (err, appointment) {
+    if (err) {
+      console.log("error creating appointment");
+      next(err);
+    } else {
+      console.log("appointment created successfully");
+      res.redirect("/");
+    }
   });
 });
 // route handler for displaying the list of customers
@@ -96,7 +131,6 @@ app.post("/register", function (req, res) {
     }
   });
 });
-
 // route handler for displaying the list of customers
 app.get("/customers", (req, res) => {
   // use the Customer model's find() method to retrieve all customers
@@ -106,7 +140,10 @@ app.get("/customers", (req, res) => {
       res.status(500).send("Error retrieving customers");
     } else {
       // render the customer-list view and pass the customers data to it
-      res.render("customer-list", { customers: customer, title: "Customer List" });
+      res.render("customer-list", {
+        customers: customer,
+        title: "Customer List",
+      });
     }
   });
 });
