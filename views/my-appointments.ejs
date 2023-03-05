@@ -1,0 +1,53 @@
+<!-- Title: my-appointments.ejs
+     Author: Megan Walker
+     Date: 03/05/2023
+     Description: my-appointments.ejs for pets-r-us assign
+     References: https://www.w3schools.com/
+-->
+<%- include('./partials/_header.ejs') %>
+    <!-- Customer List section-->
+    <div class="card">
+        <div class="card-content">
+            <h2>View My Appointments</h2>
+            <p>Please enter your email address to view your appointments.</p>
+            <div class="card-content">
+                <div class="form full-width">
+                    <div class="form-field">
+                        <label for="lastName">Email Address:</label><br />
+                        <input type="text" class="input" name="email" id="email" required>
+                    </div>
+                    <div class="form-field">
+                        <input type="submit" value="Search" id="search" class="btn btn-primary full-width">
+                    </div>
+                </div>
+                <div class="center-div" id="appointments"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Search for appointments
+        document.getElementById('search').onclick = function () {
+            // Get the email address
+            const email = document.getElementById('email').value;
+
+            // Make a request to the server
+            fetch('/api/appointments/' + email)
+                .then(res => res.json())
+                .then(data => {
+                    let tableString = `<br><h4 style="font-size: 32px; text-align: center; padding-bottom: 10px; font-weight: lighter">Appointments</h4><table id="appointments" style="width: 100%;" class="table full-width"><tr><th>First name</th><th>Last name</th><th>Email</th><th>Service</th></tr>`;
+                    // Loop through the appointments
+                    for (let appointment of data) {
+                        tableString += `<tr><td>${appointment.firstName}</td><td>${appointment.lastName}</td><td>${appointment.email}</td><td>${appointment.service}</td></tr>`;
+                    }
+                    // Close the table
+                    tableString += `</table>`;
+                    // Display the table
+                    document.getElementById('appointments').innerHTML = tableString;
+                });
+        }
+    </script>
+
+
+    <br><br>
+    <%- include('./partials/_footer.ejs') %>

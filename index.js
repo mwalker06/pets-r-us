@@ -14,7 +14,6 @@ const path = require("path");
 const mongoose = require("mongoose");
 const fs = require("fs");
 
-
 // Import the Appointment model
 const Appointment = require("./models/appointment");
 
@@ -64,6 +63,11 @@ app.get("/register", (req, res) => {
     title: "Register",
   });
 });
+app.get("/my-appointments", (req, res) => {
+  res.render("my-appointments.ejs", {
+    title: "My Appointments",
+  });
+});
 app.get("/booking", (req, res) => {
   let jsonFile = fs.readFileSync("./public/data/services.json");
   let services = JSON.parse(jsonFile);
@@ -94,6 +98,19 @@ app.post("/booking", (req, res, next) => {
     }
   });
 });
+
+// route handler for displaying the list of appointments
+app.get("/api/appointments/:email", async (req, res, next) => {
+  Appointment.find({ 'email': req.params.email }, function (err, appointment) {
+    if (err) {
+      console.log(err);
+      next(err);
+    } else {
+      res.json(appointment);
+    }
+  });
+});
+
 // route handler for displaying the list of customers
 app.post("/register", function (req, res) {
   console.log(req.body);
